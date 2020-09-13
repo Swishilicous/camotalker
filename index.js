@@ -3,7 +3,7 @@ const { inject, uninject} = require('powercord/injector')
 const { getModule } = require('powercord/webpack')
 
 let camouflageAuto = false
-let zeroWidth = ['​', '‍', '‌', '‎', '‏']
+let zeroWidth = ['​', '‍', '‌']
 
 module.exports = class CamoTalker extends Plugin {
   startPlugin () {
@@ -17,7 +17,7 @@ module.exports = class CamoTalker extends Plugin {
       executor: (args) => ({
         send: true, 
         result: args.join(' ').split('').map((char => {
-          return char + zeroWidth[(Math.floor(Math.random() * 5))]
+          return char + zeroWidth[(Math.floor(Math.random() * 3))]
         })).join('').slice(0, -1)
       })
     })
