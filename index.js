@@ -38,7 +38,7 @@ module.exports = class CamoTalker extends Plugin {
 
       if(camouflageAuto)
         text = text.split('').map((char => {
-          return char + zeroWidth[(Math.floor(Math.random() * 5))]
+          return char + zeroWidth[(Math.floor(Math.random() * 3))]
         })).join('').slice(0, -1)
 
       args[1].content = text
